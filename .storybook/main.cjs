@@ -20,7 +20,9 @@ module.exports = {
   "staticDirs": ["../public"],
   "viteFinal": (config, { configType }) => {
     if (configType === 'PRODUCTION') {
-      config.base = '/ignite-lab-4/'
+      config.base = '/ignite-lab-4/';
     }
+
+    return config;
   },
 }
