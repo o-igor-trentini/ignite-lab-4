@@ -16,5 +16,10 @@ export const parameters = {
   },
   docs: {
     theme: themes.dark,
-  }
+  },
+  viteFinal: (config, { configType }) => {
+    if (configType === 'PRODUCTION') {
+      config.base = '/ignite-lab-4/'
+    }
+  },
 }
