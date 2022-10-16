@@ -6,12 +6,18 @@ import { Heading } from '../components/ui/Heading';
 import { Input } from '../components/ui/Input';
 import { Text } from '../components/ui/Text';
 import { Logo } from '../layout/Logo';
+import axios from 'axios';
 
 export const SignIn: FC = () => {
     const [isUserSignIn, setIsUserSignIn] = useState<boolean>(false);
 
     const onSubmit = (evt: FormEvent) => {
         evt?.preventDefault();
+
+        axios.post('/sessions', {
+            email: 'example@email.com',
+            password: 'senha',
+        });
 
         setIsUserSignIn(true);
     };

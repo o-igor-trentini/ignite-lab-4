@@ -2,10 +2,16 @@ import { StoryObj } from '@storybook/react';
 import { within, userEvent, waitFor } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 import { SignIn } from '.';
+import { rest } from 'msw';
 
 export default {
     title: 'Components/SignIn',
     component: SignIn,
+    parameters: {
+        msw: {
+            handlers: [rest.post('/sessions', (_, res, ctx) => res(ctx.json({ message: 'Login realizado!' })))],
+        },
+    },
 };
 
 export const Default: StoryObj = {
