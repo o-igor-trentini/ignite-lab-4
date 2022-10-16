@@ -19,6 +19,7 @@ const InputDefault: FC<InputDefaultProps> = (props) => {
     return (
         <input
             {...props}
+            autoComplete="off"
             className="bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400 outline-none"
         />
     );

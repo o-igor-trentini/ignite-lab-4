@@ -2,6 +2,7 @@ import { Envelope, Lock } from 'phosphor-react';
 import { FC } from 'react';
 import { Logo } from '../layout/Logo';
 import '../styles/main.css';
+import { Button } from './ui/Button';
 import { Checkbox } from './ui/Checkbox';
 import { Heading } from './ui/Heading';
 import { Input } from './ui/Input';
@@ -22,7 +23,7 @@ export const App: FC = () => {
                 </Text>
             </header>
 
-            <form className="flex flex-col items-stretch w-full max-w-sm gap-4">
+            <form className="flex flex-col items-stretch w-full max-w-sm gap-4 mt-10">
                 <label htmlFor="email" className="flex flex-col gap-3">
                     <Text className="font-semibold">Endereço de e-mail</Text>
                     <Input.Root>
@@ -46,10 +47,31 @@ export const App: FC = () => {
                 </label>
 
                 <label htmlFor="remember" className="flex items-center gap-2">
-                    <Checkbox />
-                    <Text size="sm" className="text-gray-200"></Text>
+                    <Checkbox id="remember" />
+
+                    <Text size="sm" className="text-gray-200">
+                        Lembrar de mim por 30 dias
+                    </Text>
                 </label>
+
+                <Button type="submit" className="mt-4">
+                    Entrar na plataforma
+                </Button>
             </form>
+
+            <footer className="flex flex-col items-center gap-4 mt-8">
+                <Text size="sm" asChild>
+                    <a href="#recovery-password" className="text-gray-400 underline hover:text-gray-200">
+                        Esqueceu sua senha?
+                    </a>
+                </Text>
+
+                <Text size="sm" asChild>
+                    <a href="#create-account" className="text-gray-400 underline hover:text-gray-200">
+                        Não possui conta? Crie uma agora!
+                    </a>
+                </Text>
+            </footer>
         </div>
     );
 };
